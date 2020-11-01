@@ -39,7 +39,20 @@ namespace DZ3
                 }
             }
         }
-       
+
+        public String Alphabeta(String s1)
+        {
+            string RusAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+
+            string LatinAlphabet = "abcdefghijklmnopqrstuvwxyz";
+
+            string s5 = s1.ToUpper();
+            if ((Byte)s5[0] < 65)
+                return RusAlphabet;
+            else
+                return LatinAlphabet;
+        }
+
         public String conduct(String s1,String s2,String Alpha)
         {
             String result = "";
@@ -94,10 +107,6 @@ namespace DZ3
         
         private void Buttonclick_Click(object sender, RoutedEventArgs e)
         {
-            string RusAlphabet ="абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-
-            string LatinAlphabet ="abcdefghijklmnopqrstuvwxyz";
-
             String Alphabet;
 
             String s1 = Input1.Text;
@@ -105,22 +114,14 @@ namespace DZ3
             s2 = s2.ToLower();
 
             ss(ref s1, ref s2);
-            string s5 = s1.ToUpper();
 
-            if ((Byte)s5[0] < 65)
-                Alphabet =RusAlphabet;
-            else
-                Alphabet = LatinAlphabet;
+            Alphabet = Alphabeta(s1);
 
-            Output.Text =$"{conduct(s1,s2,Alphabet)}";
+            Output.Text = $"{conduct(s1, s2, Alphabet)}";
         }
 
         private void button2_Click(object sender1, RoutedEventArgs e1)
         {
-            string Rus = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-
-            string Latin = "abcdefghijklmnopqrstuvwxyz";          
-
             String Alphabe;
 
             String s3 = Input1.Text;
@@ -128,21 +129,14 @@ namespace DZ3
             s4 = s4.ToLower();
 
             ss(ref s3, ref s4);
+            String Alpha = Alphabeta(s3);
 
-            String Alpha;
-            string s5 = s3.ToUpper();
-
-            if ((Byte)s5[0] < 65)
-                    Alpha = Rus;
-                else
-                    Alpha = Latin;
-            
             String result = "";
             int a, b;
             Char c;
             int d;
             Char h;
-          
+
             if (s3.Length == s4.Length)
             {
                 int k = 0;
