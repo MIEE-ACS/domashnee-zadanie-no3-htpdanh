@@ -105,7 +105,9 @@ namespace DZ3
             s2 = s2.ToLower();
 
             ss(ref s1, ref s2);
-            if ((Byte)s1[0] < 65)
+            string s5 = s1.ToUpper();
+
+            if ((Byte)s5[0] < 65)
                 Alphabet =RusAlphabet;
             else
                 Alphabet = LatinAlphabet;
@@ -128,7 +130,9 @@ namespace DZ3
             ss(ref s3, ref s4);
 
             String Alpha;
-                if ((Byte)s3[0] < 65)
+            string s5 = s3.ToUpper();
+
+            if ((Byte)s5[0] < 65)
                     Alpha = Rus;
                 else
                     Alpha = Latin;
